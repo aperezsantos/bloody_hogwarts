@@ -1,0 +1,5 @@
+<h1>Hogwart's Number of Students per Course</h1>
+
+<% @courses.each do |course| %>
+  <p><%= course.name %>: <%= course.students.count %></p>
+<% end %>
