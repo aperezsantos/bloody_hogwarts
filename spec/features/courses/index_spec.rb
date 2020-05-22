@@ -13,6 +13,8 @@ RSpec.describe "Courses Index Page", type: :feature do
       StudentCourse.create!(student: luna, course: care_of_magical_creatures)
       StudentCourse.create!(student: luna, course: herbology)
       StudentCourse.create!(student: hermione, course: defense_against_the_dark_arts)
+      StudentCourse.create!(student: hermione, course: herbology)
+
 
       visit "/courses"
 
