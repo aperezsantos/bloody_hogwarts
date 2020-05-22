@@ -8,7 +8,7 @@ RSpec.describe "Student Show Page", type: :feature do
 
       care_of_magical_creatures = Course.create!(name: "Care of Magical Creatures")
       herbology = Course.create!(name: "Herbology")
-      
+
       StudentCourse.create!(student: luna, course: care_of_magical_creatures)
       StudentCourse.create!(student: luna, course: herbology)
       StudentCourse.create!(student: hermione, course: herbology)
@@ -16,9 +16,8 @@ RSpec.describe "Student Show Page", type: :feature do
 
       visit "/students/#{luna.id}"
 
-      expect(page).to have_content("Name: #{luna.name}")
-      expect(page).to have_content("Age: #{hermione.age}")
-      expect(page).to have_content("House: #{hermione.house}")
+      expect(page).to have_content("Student Name: #{luna.name}")
+      expect(page).to have_content("Care of Magical Creatures")
       expect(page).to_not have_content("Name: #{hermione.name}")
 
     end
